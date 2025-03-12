@@ -1,21 +1,31 @@
 import React from "react";
 
-export const FormInput = ({ Name }) => {
+export const FormInput = ({
+  label,
+  name,
+  type,
+  placeholder,
+  error,
+  handleInput,
+}) => {
   return (
-    <div className="flex flex-col ">
-      <div className="flex flex-col gap-[8px]">
-        <div className="flex ">
-          <p className="text-[#334155] text-[15px] font-[600]">{Name}</p>{" "}
-          <p className="text-red-600 tracking-[-0.14px] text-[15px] leading-[16px] font-[600]">
-            {" "}
-            *
-          </p>
-        </div>
-        <input
-          className="focus-visible:border-[#0fa4e9] border-[1.5px] border-solid w-full bg-transparent  border-[#cbd5e1] p-[12px] text-[16px] font-[400] rounded-[8px] outline-none h-[46px] "
-          placeholder="Placeholder"
-        />
-      </div>
+    <div className="w-full flex-col gap-2">
+      <p className="font-bold">
+        {label}
+        <span className="text-red-600"></span>
+      </p>
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        className="w-full p-3 rounded-lg border focus:border-[#0CA5E9]"
+        onChange={handleInput}
+        style={{
+          borderColor: error ? "#E14942" : "#CBD5E1",
+          color: error && "#E14942",
+        }}
+      />
+      {error && <p className="text-[#E14942]">{errorMsg}</p>}
     </div>
   );
 };
