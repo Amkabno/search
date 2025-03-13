@@ -5,9 +5,8 @@ export const ProfileStep = () => {
     <div className="flex flex-col ">
       <div className="flex flex-col gap-[8px]">
         <div className="flex ">
-          <p className="text-[#334155] text-[15px] font-[600]">Date of birth</p>{" "}
+          <p className="text-[#334155] text-[15px] font-[600]">Date of birth</p>
           <p className="text-red-600 tracking-[-0.14px] text-[15px] leading-[16px] font-[600]">
-            {" "}
             *
           </p>
         </div>

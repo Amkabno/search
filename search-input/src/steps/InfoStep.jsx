@@ -1,3 +1,4 @@
+import { FormInput } from "@/components/FormInput";
 import React from "react";
 
 export const InfoStep = ({ handleSubmit, stepCount, handleInput }) => {
@@ -8,28 +9,52 @@ export const InfoStep = ({ handleSubmit, stepCount, handleInput }) => {
     >
       <div>
         <FormInput
-          label={"Gmail"}
+          label={
+            <>
+              Email <span style={{ color: "#e14942" }}>*</span>
+            </>
+          }
           name={"firstName"}
           type={"text"}
-          placeholder={"Enter first name"}
+          placeholder={"Enter Email"}
           error={null}
           handleInput={handleInput}
         />
 
         <FormInput
-          label={"Last Name"}
+          label={
+            <>
+              Phone Number <span style={{ color: "#e14942" }}>*</span>
+            </>
+          }
           name={"lastName"}
           type={"text"}
-          placeholder={"Enter last name"}
+          placeholder={"Enter phone number"}
           error={null}
           handleInput={handleInput}
         />
 
         <FormInput
-          label={"User Name"}
+          label={
+            <>
+              Password <span style={{ color: "#e14942" }}>*</span>
+            </>
+          }
           name={"userName"}
           type={"text"}
-          placeholder={"Enter user name"}
+          placeholder={"Enter password"}
+          error={null}
+          handleInput={handleInput}
+        />
+        <FormInput
+          label={
+            <>
+              Confirm Password <span style={{ color: "#e14942" }}>*</span>
+            </>
+          }
+          name={"userName"}
+          type={"text"}
+          placeholder={"Enter password"}
           error={null}
           handleInput={handleInput}
         />

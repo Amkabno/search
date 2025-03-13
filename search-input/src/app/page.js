@@ -16,6 +16,15 @@ export default function Home() {
   const handleNextStep = (event) => {
     event.preventDefault();
 
+    if (formValues.firstName === "") {
+      setFormErrors((previousValues) => ({
+        ...previousValues,
+        firstName: "Firstname is empty",
+      }));
+
+      return;
+    }
+
     if (stepCount >= 2) {
       return;
     }
@@ -32,6 +41,7 @@ export default function Home() {
     const { name, value } = event.target;
     setFormValues((previousValues) => ({ ...previousValues, [name]: value }));
   };
+  console.log(formValues);
 
   const CurrentStep = [NameStep, InfoStep, ProfileStep][stepCount];
 
@@ -43,7 +53,7 @@ export default function Home() {
     <div className="flex h-screen w-screen justify-center items-center bg-[#f4f4f4]  ">
       <div className="w-[448px] h-[623px] p-[32px] bg-white flex rounded-[8px] flex-col justify-between">
         <div className="flex flex-col gap-7 h-full">
-          <Header />
+          {stepCount !== 3 && <Header />}
 
           <CurrentStep
             handleSubmit={handleNextStep}
@@ -51,7 +61,13 @@ export default function Home() {
             handleInput={handleInputChange}
             handlePreviousStep={handlePreviousStep}
           />
-          <Footer />
+          <div className="flex h-full items-end">
+            <Footer
+              handleNext={handleNextStep}
+              stepCount={stepCount + 1}
+              handlePrevious={handlePreviousStep}
+            />
+          </div>
         </div>
       </div>
     </div>
