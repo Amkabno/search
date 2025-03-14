@@ -9,53 +9,41 @@ export const InfoStep = ({ handleSubmit, stepCount, handleInput }) => {
     >
       <div>
         <FormInput
-          label={
-            <>
-              Email <span style={{ color: "#e14942" }}>*</span>
-            </>
-          }
+          label={"  Email "}
           name={"firstName"}
           type={"text"}
           placeholder={"Enter Email"}
           error={null}
+          errorMsg={"Please provide a valid email address."}
           handleInput={handleInput}
         />
 
         <FormInput
-          label={
-            <>
-              Phone Number <span style={{ color: "#e14942" }}>*</span>
-            </>
-          }
+          label={"   Phone Number "}
           name={"lastName"}
           type={"text"}
           placeholder={"Enter phone number"}
           error={null}
+          errorMsg={"Please enter a valid phone number."}
           handleInput={handleInput}
         />
 
         <FormInput
-          label={
-            <>
-              Password <span style={{ color: "#e14942" }}>*</span>
-            </>
-          }
+          label={"Password "}
           name={"userName"}
           type={"text"}
           placeholder={"Enter password"}
           error={null}
+          errorMsg={"Password must include letters and numbers."}
           handleInput={handleInput}
         />
         <FormInput
-          label={
-            <>
-              Confirm Password <span style={{ color: "#e14942" }}>*</span>
-            </>
-          }
+          label={"  Confirm Password "}
           name={"userName"}
           type={"text"}
           placeholder={"Enter password"}
           error={null}
+          errorMsg={"Passwords do not match. Please try again."}
           handleInput={handleInput}
         />
       </div>

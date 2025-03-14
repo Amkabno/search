@@ -2,7 +2,7 @@ import React from "react";
 
 export const Header = () => {
   return (
-    <div className="felx flex-col">
+    <div className="flex flex-col">
       <img src="pinecone.svg" className="w-[60px]"></img>
       <div className="flex flex-col">
         <h1 className="text-[26px] font-[600] ">Join Us! 😎 </h1>
